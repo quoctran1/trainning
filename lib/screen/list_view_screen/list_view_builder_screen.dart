@@ -64,7 +64,6 @@ class _ListScreenState extends State<ListScreen> {
     super.initState();
     list = List.generate(20, (index) => index.toString());
 
-    super.initState();
     _stream = BehaviorSubject();
     _stream.debounceTime(const Duration(milliseconds: 10)).listen(_listen);
   }

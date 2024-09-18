@@ -1,5 +1,4 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
 
 class DatePickerExample extends StatefulWidget {
   const DatePickerExample({super.key});

@@ -18,7 +18,6 @@ class _ExpandScreenState extends State<ExpandScreen> {
                 fit: FlexFit.tight,
                 flex: 1,
                 child: Container(color: Colors.red, child: Text('Red'))),
-            // Container(width: 20,),
             Flexible(
                 fit: FlexFit.tight,
                 flex: 1,

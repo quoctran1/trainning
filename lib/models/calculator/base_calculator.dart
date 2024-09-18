@@ -13,7 +13,7 @@ abstract class BaseCalculator {
   }
 }
 
-abstract class Parent {}
+
 
 class SumCalculator extends BaseCalculator {
   SumCalculator({required super.methodName});

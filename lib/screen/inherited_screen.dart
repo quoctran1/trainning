@@ -64,7 +64,7 @@ class _NameWidgetState extends State<NameWidget> {
   @override
   Widget build(BuildContext context) {
     return Text(
-      inhe?.name ?? "",
+      inhe.name  ,
       textAlign: TextAlign.center,
     );
   }

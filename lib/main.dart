@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:trainning/screen/cupertino_screen.dart';
 import 'package:trainning/screen/form/form_screen.dart';
 import 'package:trainning/screen/form/text_field_screen.dart';
+import 'package:trainning/screen/future_screen/future_screen.dart';
 import 'package:trainning/screen/image_screen/cache_image_screen.dart';
 import 'package:trainning/screen/inherited_screen.dart';
 import 'package:trainning/screen/late_screen.dart';
@@ -309,6 +310,20 @@ class _MyHomePageState extends State<MyHomePage> {
                   MaterialPageRoute<void>(
                     builder: (BuildContext context) =>
                         const FormContainerScreen(),
+                  ),
+                );
+              },
+            ),
+            const Divider(
+              color: Colors.red,
+            ),
+            HomeButtonWidget(
+              title: 'FutureScreen',
+              onTap: () {
+                Navigator.push<void>(
+                  context,
+                  MaterialPageRoute<void>(
+                    builder: (BuildContext context) => const FutureScreen(),
                   ),
                 );
               },

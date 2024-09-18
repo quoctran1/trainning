@@ -4,6 +4,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:trainning/screen/image_screen/fit_image_screen.dart';
 import 'package:trainning/utils/app_images/app_images.dart';
 import 'package:trainning/widget/home_button_widget.dart';
 
@@ -41,6 +42,7 @@ class _CacheImageScreenState extends State<CacheImageScreen> {
                     const CircularProgressIndicator(),
                 errorWidget: (context, url, error) => const Icon(Icons.error),
               ),
+              const FitImageScreen(),
               SvgPicture.asset(
                 AppImages.icPlus,
               ),

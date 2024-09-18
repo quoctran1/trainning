@@ -1,20 +1,16 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:trainning/screen/value_notifier_screen.dart';
 
 void main() {
   group('Nullable', () {
     test('Non-null', () {
-      int one = 1;
-      int two = 1;
-      String string1 = '11';
-      String string2 = '11';
-      bool temp = false;
-      double number = 1.1;
-
-      Utils uti = Utils();
-
-
+      // int one = 1;
+      // int two = 1;
+      // String string1 = '11';
+      // String string2 = '11';
+      // bool temp = false;
+      // double number = 1.1;
+      //
+      // Utils uti = Utils();
     });
   });
 }

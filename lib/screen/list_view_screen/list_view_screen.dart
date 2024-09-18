@@ -1,8 +1,6 @@
-import 'dart:math';
 
 import 'package:flutter/material.dart';
 
-import '../../widget/list_view/list_view_item.dart';
 
 class ListViewScreen extends StatefulWidget {
   const ListViewScreen({super.key});
