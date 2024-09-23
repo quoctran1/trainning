@@ -14,6 +14,8 @@ import 'package:trainning/screen/list_view_screen/list_view_seperate_screen.dart
 import 'package:trainning/screen/my_profile_screen.dart';
 import 'package:trainning/screen/nullable_screen.dart';
 import 'package:trainning/screen/oop_screen/oop_screen.dart';
+import 'package:trainning/screen/stream_screen/stream_broadcast_screen.dart';
+import 'package:trainning/screen/stream_screen/single_subscription_stream_screen.dart';
 import 'package:trainning/screen/value_notifier_screen.dart';
 import 'package:trainning/widget/home_button_widget.dart';
 
@@ -24,6 +26,7 @@ import 'screen/material_screen.dart';
 import 'screen/mixin_screen/mixin_screen.dart';
 import 'screen/non_null_screen.dart';
 import 'screen/set_state_screen.dart';
+import 'screen/stream_screen/stream_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -342,6 +345,47 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                 );
               },
+            ),
+            const Divider(
+              color: Colors.red,
+            ),
+            HomeButtonWidget(
+              title: 'StreamScreen',
+              onTap: () {
+                Navigator.push<void>(
+                  context,
+                  MaterialPageRoute<void>(
+                    builder: (BuildContext context) => const StreamScreen(),
+                  ),
+                );
+              },
+            ),
+            HomeButtonWidget(
+              title: 'SingleSubscriptionStreamScreen',
+              onTap: () {
+                Navigator.push<void>(
+                  context,
+                  MaterialPageRoute<void>(
+                    builder: (BuildContext context) =>
+                        const SingleSubscriptionStreamScreen(),
+                  ),
+                );
+              },
+            ),
+            HomeButtonWidget(
+              title: 'StreamBroadcastScreen',
+              onTap: () {
+                Navigator.push<void>(
+                  context,
+                  MaterialPageRoute<void>(
+                    builder: (BuildContext context) =>
+                        const StreamBroadcastScreen(),
+                  ),
+                );
+              },
+            ),
+            const Divider(
+              color: Colors.red,
             ),
           ],
         ),
