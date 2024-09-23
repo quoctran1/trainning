@@ -44,9 +44,19 @@ class _CacheImageScreenState extends State<CacheImageScreen> {
               ),
               const FitImageScreen(),
               SvgPicture.asset(
-                AppImages.icPlus,
+                AppImages.icPlusPlus,
+              ),
+              SvgPicture.asset(
+                AppImages.icPlusPlus,
+              ),
+              SvgPicture.asset(
+                AppImages.icPlusPlus,
+              ),
+              SvgPicture.asset(
+                AppImages.icPlusPlus,
               ),
               Container(
+                margin: const EdgeInsets.all(AppConstant.defaultMargin),
                 width: 300,
                 height: 300,
                 color: Colors.red,
@@ -61,6 +71,11 @@ class _CacheImageScreenState extends State<CacheImageScreen> {
                     selectImage();
                   }),
               if (file != null) Image.file(file!),
+              const Divider(
+                color: Colors.red,
+              ),
+              const Text('Clip'),
+              const ClipperContainer(),
             ],
           ),
         ),
@@ -70,8 +85,7 @@ class _CacheImageScreenState extends State<CacheImageScreen> {
 
   void selectImage() async {
     final ImagePicker picker = ImagePicker();
-    final XFile? image =
-        await picker.pickImage(source: ImageSource.gallery, imageQuality: 0);
+    final XFile? image = await picker.pickImage(source: ImageSource.gallery);
     if (image != null) {
       setState(() {
         file = File.fromUri(Uri.parse(image.path));
@@ -81,4 +95,6 @@ class _CacheImageScreenState extends State<CacheImageScreen> {
 
 // flutter_image_compress
 // https://github.com/warcayac/compressors_comparison
+
+//CFol: https://github.com/Baseflow/flutter_cached_network_image/issues/802
 }

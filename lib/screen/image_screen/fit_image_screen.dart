@@ -53,9 +53,11 @@ class ImageContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      clipBehavior: Clip.hardEdge,
       margin: const EdgeInsets.symmetric(vertical: 12),
       decoration: BoxDecoration(
-          // borderRadius: BorderRadius.circular(40),
+
+          borderRadius: BorderRadius.circular(40),
           border: Border.all(color: Colors.black)),
       child: Column(
         children: [
@@ -76,4 +78,62 @@ class ImageContainer extends StatelessWidget {
       ),
     );
   }
+}
+
+class ClipperContainer extends StatefulWidget {
+  const ClipperContainer({super.key});
+
+  @override
+  State<ClipperContainer> createState() => _ClipperContainerState();
+}
+
+class _ClipperContainerState extends State<ClipperContainer> {
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        ClipPath(
+          clipBehavior: Clip.hardEdge,
+          clipper: TriangleClipper(),
+          child: Container(
+            color: Colors.red,
+            width: 900.0,
+            height: 900.0,
+          ),
+        ),
+        ClipPath(
+          clipBehavior: Clip.antiAlias,
+          clipper: TriangleClipper(),
+          child: Container(
+            color: Colors.red,
+            width: 900.0,
+            height: 900.0,
+          ),
+        ),
+        ClipPath(
+          clipBehavior: Clip.antiAliasWithSaveLayer,
+          clipper: TriangleClipper(),
+          child: Container(
+            color: Colors.red,
+            width: 900.0,
+            height: 900.0,
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+class TriangleClipper extends CustomClipper<Path> {
+  @override
+  Path getClip(Size size) {
+    final path = Path();
+    path.lineTo(size.width, 0.0);
+    path.lineTo(size.width / 2, size.height);
+    path.close;
+    return path;
+  }
+
+  @override
+  bool shouldReclip(TriangleClipper oldClipper) => true;
 }

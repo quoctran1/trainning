@@ -11,6 +11,7 @@ void main() {
       // double number = 1.1;
       //
       // Utils uti = Utils();
+
     });
   });
 }
@@ -31,4 +32,5 @@ class Utils {
   dynamic getValueDyna(dynamic value) {
     return value;
   }
+
 }

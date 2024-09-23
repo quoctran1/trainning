@@ -11,7 +11,7 @@ class FormScreen extends StatefulWidget {
 class _FormScreenState extends State<FormScreen> {
   late TextEditingController nameController, passwordController;
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
-  late Color colors = Colors.grey;
+  Color colors = Colors.grey;
 
   @override
   void initState() {
@@ -34,10 +34,10 @@ class _FormScreenState extends State<FormScreen> {
       body: SafeArea(
         child: Form(
           key: _formKey,
-          // autovalidateMode: AutovalidateMode.onUserInteraction,
-          // onChanged: () {
-          //   validate();
-          // },
+          autovalidateMode: AutovalidateMode.onUserInteraction,
+          onChanged: () {
+            validate();
+          },
           child: Column(
             children: [
               TextFormField(

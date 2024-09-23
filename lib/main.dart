@@ -21,6 +21,7 @@ import 'screen/expand_screen.dart';
 import 'screen/form/form_container_screen.dart';
 import 'screen/list_view_screen/list_view_builder_screen.dart';
 import 'screen/material_screen.dart';
+import 'screen/mixin_screen/mixin_screen.dart';
 import 'screen/non_null_screen.dart';
 import 'screen/set_state_screen.dart';
 
@@ -324,6 +325,20 @@ class _MyHomePageState extends State<MyHomePage> {
                   context,
                   MaterialPageRoute<void>(
                     builder: (BuildContext context) => const FutureScreen(),
+                  ),
+                );
+              },
+            ),
+            const Divider(
+              color: Colors.red,
+            ),
+            HomeButtonWidget(
+              title: 'MixinScreen',
+              onTap: () {
+                Navigator.push<void>(
+                  context,
+                  MaterialPageRoute<void>(
+                    builder: (BuildContext context) => const MixinScreen(),
                   ),
                 );
               },

@@ -19,6 +19,7 @@ class _TextFieldScreenState extends State<TextFieldScreen> {
     passwordController = TextEditingController();
 
     focusName = FocusNode();
+    // focusName.requestFocus();
     super.initState();
   }
 
