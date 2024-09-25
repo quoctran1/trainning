@@ -22,19 +22,22 @@ class _StreamBroadcastScreenState extends State<StreamBroadcastScreen> {
 
     //region listen
 
-    counterStreamController.streamController.stream.listen((event) {
-      print("listen: $event");
-    });
-    // streamSubscription = counterStreamController.getStream.listen((event) {
-    //   print('streamSubscription : $event');
+    // counterStreamController.streamController.stream.listen((event) {
+    //   print("listen: $event");
     // });
+    streamSubscription = counterStreamController.getStream.listen((event) {
+      print('streamSubscription : $event');
+    });
+
     //endregion
+
     super.initState();
   }
 
   @override
   void dispose() {
     counterStreamController.streamController.close();
+    streamSubscription.cancel();
     super.dispose();
   }
 
@@ -54,11 +57,20 @@ class _StreamBroadcastScreenState extends State<StreamBroadcastScreen> {
                 return const Text('Error');
               },
             ),
-            HomeButtonWidget(
-                title: 'Submit',
-                onTap: () {
-                  counterStreamController.addData();
-                }),
+            Row(
+              children: [
+                HomeButtonWidget(
+                    title: 'Submit',
+                    onTap: () {
+                      counterStreamController.addData();
+                    }),
+                HomeButtonWidget(
+                    title: 'Add Stream',
+                    onTap: () {
+                      counterStreamController.addStream();
+                    }),
+              ],
+            ),
             const Divider(
               color: Colors.red,
             ),
@@ -81,7 +93,7 @@ class _StreamBroadcastScreenState extends State<StreamBroadcastScreen> {
                       streamSubscription.cancel();
                     }),
               ],
-            )
+            ),
           ],
         ),
       ),

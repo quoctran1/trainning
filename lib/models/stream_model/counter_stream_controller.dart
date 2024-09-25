@@ -1,12 +1,12 @@
 import 'dart:async';
 
+import 'package:trainning/models/stream_model/counter_stream.dart';
+
 class CounterStreamController {
   int count = 0;
   StreamController<int> streamController;
 
-  CounterStreamController._(this.streamController); //region broadcast
-  // StreamController<int> streamController = StreamController<int>.broadcast( );
-  //endregion
+  CounterStreamController._(this.streamController);
 
   Stream<int> get getStream => streamController.stream;
 
@@ -34,7 +34,15 @@ class CounterStreamController {
 
   //endregion
 
+  //region addData
   void addData() {
     streamController.add(10);
   }
+
+  void addStream() {
+    final stream = CounterStream().createCountStream();
+    streamController.addStream(stream);
+  }
+
+//endregion
 }

@@ -46,7 +46,8 @@ class _FutureScreenState extends State<FutureScreen> {
               builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
                 print(snapshot.connectionState);
                 if (snapshot.hasData) {
-                  return Text("snapshot.hasData: ${snapshot.hasData} /Data: ${snapshot.data}");
+                  return Text(
+                      "snapshot.hasData: ${snapshot.hasData} /Data: ${snapshot.data}");
                 }
                 if (snapshot.hasError) {
                   return Text("snapshot.hasError: ${snapshot.hasError}");
@@ -73,7 +74,7 @@ class _FutureScreenState extends State<FutureScreen> {
     print('Function started...');
 
     int count = 0;
-    for (int i = 0; i < 1000000000; i++) {
+    for (int i = 0; i < 2000000000; i++) {
       count += i;
     }
 
@@ -100,7 +101,6 @@ class _FutureScreenState extends State<FutureScreen> {
     // timeConsumingFunctionFuture()
     //     .then((int value) => print(value))
     //     .timeout(const Duration(seconds: 2));
-    print('End');
 
     print('Main function completed ');
   }
