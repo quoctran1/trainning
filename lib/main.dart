@@ -7,6 +7,7 @@ import 'package:trainning/screen/form/text_field_screen.dart';
 import 'package:trainning/screen/future_screen/future_screen.dart';
 import 'package:trainning/screen/image_screen/cache_image_screen.dart';
 import 'package:trainning/screen/inherited_screen.dart';
+import 'package:trainning/screen/isolate_screen/isolate_screen.dart';
 import 'package:trainning/screen/late_screen.dart';
 import 'package:trainning/screen/list_view_screen/custom_list_view_screen.dart';
 import 'package:trainning/screen/list_view_screen/list_view_custom_builder_screen.dart';
@@ -447,6 +448,20 @@ class _MyHomePageState extends State<MyHomePage> {
                   MaterialPageRoute<void>(
                     builder: (BuildContext context) =>
                         const BlocProviderScreen(),
+                  ),
+                );
+              },
+            ),
+            const Divider(
+              color: Colors.red,
+            ),
+            HomeButtonWidget(
+              title: 'IsolateScreen',
+              onTap: () {
+                Navigator.push<void>(
+                  context,
+                  MaterialPageRoute<void>(
+                    builder: (BuildContext context) => const IsolateScreen(),
                   ),
                 );
               },
