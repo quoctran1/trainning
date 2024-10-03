@@ -28,6 +28,9 @@ class _StreamBroadcastScreenState extends State<StreamBroadcastScreen> {
     streamSubscription = counterStreamController.getStream.listen((event) {
       print('streamSubscription : $event');
     });
+   // streamSubscription = counterStreamController.getStreamTransform.listen((event) {
+   //    print('getStreamTransform : $event');
+   //  });
 
     //endregion
 

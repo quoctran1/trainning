@@ -26,9 +26,10 @@ class _StreamScreenState extends State<StreamScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            StreamBuilder<int>(
-              stream: counterStream.createCountStream(),
-              builder: (BuildContext context, AsyncSnapshot<int> snapshot) {
+            StreamBuilder(
+              stream: counterStream.getIterableFuture(),
+              builder: (BuildContext context, AsyncSnapshot snapshot) {
+
                 if (snapshot.hasData) {
                   return Flexible(
                       child: Text(
@@ -44,25 +45,6 @@ class _StreamScreenState extends State<StreamScreen> {
                 );
               },
             ),
-            // StreamBuilder<String>(
-            //   stream: counterStream.getIterableFuture(),
-            //   builder: (BuildContext context, AsyncSnapshot<String> snapshot) {
-            //
-            //     if (snapshot.hasData) {
-            //       return Flexible(
-            //           child: Text(
-            //         "${snapshot.data}",
-            //         textAlign: TextAlign.center,
-            //         style: const TextStyle(fontSize: 30),
-            //       ));
-            //     }
-            //     return const Text(
-            //       'Error',
-            //       textAlign: TextAlign.center,
-            //       style: TextStyle(fontSize: 30),
-            //     );
-            //   },
-            // ),
           ],
         ),
       ),

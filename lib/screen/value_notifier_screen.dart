@@ -24,6 +24,7 @@ class _ValueNotifierScreenState extends State<ValueNotifierScreen> {
   void initState() {
     valueNotifierString = ValueNotifier('1');
     valueNotifierString.addListener(listenData);
+    // valueNotifierString.removeListener(listenData);
     super.initState();
   }
 

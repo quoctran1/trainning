@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:trainning/screen/bloc_screen/bloc_provider_screen.dart';
+import 'package:trainning/screen/bloc_screen/bloc_screen.dart';
 import 'package:trainning/screen/cupertino_screen.dart';
 import 'package:trainning/screen/form/form_screen.dart';
 import 'package:trainning/screen/form/text_field_screen.dart';
@@ -16,6 +18,8 @@ import 'package:trainning/screen/nullable_screen.dart';
 import 'package:trainning/screen/oop_screen/oop_screen.dart';
 import 'package:trainning/screen/stream_screen/stream_broadcast_screen.dart';
 import 'package:trainning/screen/stream_screen/single_subscription_stream_screen.dart';
+import 'package:trainning/screen/subject_screen/publish_subject_screen.dart';
+import 'package:trainning/screen/subject_screen/replay_subject_screen.dart';
 import 'package:trainning/screen/value_notifier_screen.dart';
 import 'package:trainning/widget/home_button_widget.dart';
 
@@ -27,6 +31,7 @@ import 'screen/mixin_screen/mixin_screen.dart';
 import 'screen/non_null_screen.dart';
 import 'screen/set_state_screen.dart';
 import 'screen/stream_screen/stream_screen.dart';
+import 'screen/subject_screen/behaviour_subject_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -380,6 +385,68 @@ class _MyHomePageState extends State<MyHomePage> {
                   MaterialPageRoute<void>(
                     builder: (BuildContext context) =>
                         const StreamBroadcastScreen(),
+                  ),
+                );
+              },
+            ),
+            HomeButtonWidget(
+              title: 'BehaviourSubjectScreen',
+              onTap: () {
+                Navigator.push<void>(
+                  context,
+                  MaterialPageRoute<void>(
+                    builder: (BuildContext context) =>
+                        const BehaviourSubjectScreen(),
+                  ),
+                );
+              },
+            ),
+            HomeButtonWidget(
+              title: 'PublishSubjectScreen',
+              onTap: () {
+                Navigator.push<void>(
+                  context,
+                  MaterialPageRoute<void>(
+                    builder: (BuildContext context) =>
+                        const PublishSubjectScreen(),
+                  ),
+                );
+              },
+            ),
+            HomeButtonWidget(
+              title: 'MainSrceen',
+              onTap: () {
+                Navigator.push<void>(
+                  context,
+                  MaterialPageRoute<void>(
+                    builder: (BuildContext context) =>
+                        const ReplaySubjectScreen(),
+                  ),
+                );
+              },
+            ),
+            const Divider(
+              color: Colors.red,
+            ),
+            HomeButtonWidget(
+              title: 'BlocScreen',
+              onTap: () {
+                Navigator.push<void>(
+                  context,
+                  MaterialPageRoute<void>(
+                    builder: (BuildContext context) => const BlocScreen(),
+                  ),
+                );
+              },
+            ),
+            HomeButtonWidget(
+              title: 'BlocProviderScreen',
+              onTap: () {
+                Navigator.push<void>(
+                  context,
+                  MaterialPageRoute<void>(
+                    builder: (BuildContext context) =>
+                        const BlocProviderScreen(),
                   ),
                 );
               },

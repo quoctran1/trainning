@@ -88,15 +88,15 @@ class _FutureScreenState extends State<FutureScreen> {
   void onTapASync() async {
     print('Start');
 
-    timeConsumingFunctionFuture().then((int value) => print(value));
+    // timeConsumingFunctionFuture().then((int value) => print(value));
 
     // timeConsumingFunctionFuture()
     //     .then((int value) => print(value))
     //     .whenComplete(() => print('whenComplete'))
     //     .onError((error, stackTrace) => print('onError'));
 
-    // timeConsumingFunctionFuture()
-    //     .timeout(const Duration(seconds: 2))
+    // (timeConsumingFunctionFuture()
+    //     .timeout(const Duration(seconds: 2)))
     //     .then((int value) => print(value));
     // timeConsumingFunctionFuture()
     //     .then((int value) => print(value))

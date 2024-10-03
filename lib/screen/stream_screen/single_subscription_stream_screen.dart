@@ -20,9 +20,9 @@ class _SingleSubscriptionStreamScreenState extends State<SingleSubscriptionStrea
 
     //region listen
 
-    // counterStreamController.streamController.stream.listen((event) {
-    //   print(event);
-    // });
+    counterStreamController.streamController.stream.listen((event) {
+      print(event);
+    });
 
     //endregion
     super.initState();
@@ -55,6 +55,8 @@ class _SingleSubscriptionStreamScreenState extends State<SingleSubscriptionStrea
                 onTap: () {
                   counterStreamController.addData();
                 }),
+            const SizedBox(height: 100,width: 100,),
+              Container(height: 100,width: 100,)
 
           ],
         ),
