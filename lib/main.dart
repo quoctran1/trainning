@@ -10,6 +10,7 @@ import 'package:trainning/screen/inherited_screen.dart';
 import 'package:trainning/screen/isolate_screen/isolate_screen.dart';
 import 'package:trainning/screen/late_screen.dart';
 import 'package:trainning/screen/list_view_screen/custom_list_view_screen.dart';
+import 'package:trainning/screen/list_view_screen/generic_list_view.dart';
 import 'package:trainning/screen/list_view_screen/list_view_custom_builder_screen.dart';
 import 'package:trainning/screen/list_view_screen/list_view_custom_list_screen.dart';
 import 'package:trainning/screen/list_view_screen/list_view_screen.dart';
@@ -218,6 +219,22 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             const Divider(
               color: Colors.red,
+            ),
+            HomeButtonWidget(
+              title: 'Generic ListView Screen',
+              onTap: () {
+                Navigator.push<void>(
+                  context,
+                  MaterialPageRoute<void>(
+                    builder: (BuildContext context) => GenericListView<String>(
+                      data: const <String>['asd', 'cxzc', 'wew'],
+                      buildItem: (int index, String data) {
+                        return Text('Data: $data');
+                      },
+                    ),
+                  ),
+                );
+              },
             ),
             HomeButtonWidget(
               title: 'ListViewScreen',
