@@ -2,9 +2,9 @@ import 'package:trainning/utils/flavor_configs.dart';
 
 Map<Flavor, Map<String, dynamic>> env = {
   Flavor.dev: <String, dynamic>{
-    'baseUrl': 'https://www.google.com',
+    'baseUrl': 'https://www.dev.faceboook.com',
   },
   Flavor.prod: <String, dynamic>{
-    'baseUrl': 'https://www.apple.com/vn/store',
+    'baseUrl': 'https://www.faceboook.com',
   },
 };

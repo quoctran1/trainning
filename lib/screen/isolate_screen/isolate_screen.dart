@@ -63,7 +63,7 @@ class _IsolateScreenState extends State<IsolateScreen> {
                     title: 'Isolate',
                     onTap: () {
                       // completeNotifier.value = true;
-                      Isolate.run(go);
+                      compute(heavyLoop,5000000000);
                       // IsolateController().callFunction(5000000000);
                     }),
               ],
@@ -105,4 +105,12 @@ class IsolateController {
     }
     print('end loop');
   }
+}
+void heavyLoop(int value) {
+  print('start loop');
+  int count = 0;
+  for (int i = 0; i < value; i++) {
+    count += i;
+  }
+  print('end loop');
 }

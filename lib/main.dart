@@ -21,7 +21,9 @@ import 'package:trainning/screen/stream_screen/stream_broadcast_screen.dart';
 import 'package:trainning/screen/stream_screen/single_subscription_stream_screen.dart';
 import 'package:trainning/screen/subject_screen/publish_subject_screen.dart';
 import 'package:trainning/screen/subject_screen/replay_subject_screen.dart';
+import 'package:trainning/screen/tab_screen/tab_screen.dart';
 import 'package:trainning/screen/value_notifier_screen.dart';
+import 'package:trainning/utils/flavor_configs.dart';
 import 'package:trainning/widget/home_button_widget.dart';
 
 import 'screen/expand_screen.dart';
@@ -33,6 +35,7 @@ import 'screen/non_null_screen.dart';
 import 'screen/set_state_screen.dart';
 import 'screen/stream_screen/stream_screen.dart';
 import 'screen/subject_screen/behaviour_subject_screen.dart';
+import 'screen/tab_screen/general_tab_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -43,13 +46,18 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
+    return GestureDetector(
+      onTap: () {
+        WidgetsBinding.instance.focusManager.primaryFocus?.unfocus();
+      },
+      child: MaterialApp(
+        title: 'Flutter Demo',
+        theme: ThemeData(
+          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+          useMaterial3: true,
+        ),
+        home: const MyHomePage(title: 'Flutter Demo Home Page'),
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
 }
@@ -64,6 +72,18 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  int temo = 0;
+  late String dw;
+  late ValueNotifier<String> notifier;
+
+  void onClickSubmit() {}
+
+  @override
+  void dispose() {
+    notifier.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -75,7 +95,7 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           children: [
             HomeButtonWidget(
-              title: 'Non-Nullable',
+              title: FlavorConfig.instance?.values.baseUrl ?? "",
               onTap: () {
                 Navigator.push<void>(
                   context,
@@ -92,6 +112,17 @@ class _MyHomePageState extends State<MyHomePage> {
                   context,
                   MaterialPageRoute<void>(
                     builder: (BuildContext context) => const NullableScreen(),
+                  ),
+                );
+              },
+            ),
+            HomeButtonWidget(
+              title: 'TabScreen',
+              onTap: () {
+                Navigator.push<void>(
+                  context,
+                  MaterialPageRoute<void>(
+                    builder: (BuildContext context) => const GeneralTabScreen(),
                   ),
                 );
               },
@@ -473,5 +504,11 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
     );
+  }
+
+  @override
+  void initState() {
+    notifier = ValueNotifier('');
+    super.initState();
   }
 }

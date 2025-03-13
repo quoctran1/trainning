@@ -19,6 +19,7 @@ class _TextFieldScreenState extends State<TextFieldScreen> {
     passwordController = TextEditingController();
 
     focusName = FocusNode();
+
     // focusName.requestFocus();
     super.initState();
   }
@@ -63,6 +64,8 @@ class _TextFieldScreenState extends State<TextFieldScreen> {
               title: 'Submit',
               onTap: () {
                 print('adwawdaw');
+                // focusName.unfocus();
+
               })
         ],
       )),

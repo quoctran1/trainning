@@ -63,11 +63,13 @@ android {
     productFlavors {
 
         production {
-            versionCode 1
+            versionCode 2
             applicationId "com.example.trainning.production"
             versionName "1.0.0"
             resValue "string", "app_name", "Prod Trainning"
         }
+
+
         development {
             applicationId "com.example.trainning.development"
             versionCode 1

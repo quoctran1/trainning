@@ -55,11 +55,12 @@ class _CacheImageScreenState extends State<CacheImageScreen> {
               SvgPicture.asset(
                 AppImages.icPlusPlus,
               ),
+               const SizedBox(height: 20),
               Container(
                 margin: const EdgeInsets.all(AppConstant.defaultMargin),
                 width: 300,
                 height: 300,
-                color: Colors.red,
+                color: AppColor.pilaYellow,
                 child: Image.asset(
                   'assets/images/subhome.jpeg',
                   fit: BoxFit.cover,
@@ -74,7 +75,7 @@ class _CacheImageScreenState extends State<CacheImageScreen> {
               const Divider(
                 color: Colors.red,
               ),
-              const Text('Clip'),
+                Text(getString()),
               const ClipperContainer(),
             ],
           ),
@@ -91,6 +92,12 @@ class _CacheImageScreenState extends State<CacheImageScreen> {
         file = File.fromUri(Uri.parse(image.path));
       });
     }
+  }
+
+    String getString(){
+    String fe='dww';
+    return fe;
+    // return 'adwdwa';
   }
 
 // flutter_image_compress

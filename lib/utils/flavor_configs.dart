@@ -1,6 +1,6 @@
 import 'package:trainning/utils/env.dart';
 
-enum Flavor { dev, prod }
+enum Flavor { dev, prod,}
 
 class FlavorValues {
   late String baseUrl;
