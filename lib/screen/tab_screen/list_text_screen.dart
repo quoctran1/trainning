@@ -17,13 +17,8 @@ class ListTextScreen extends StatefulWidget {
 
 class _ListTextScreenState extends State<ListTextScreen>
     with AutomaticKeepAliveClientMixin {
-  List<String> data = [];
+  List<InsertData> data = [];
   late InheritedTabController inheritedTabController;
-
-  @override
-  void initState() {
-    super.initState();
-  }
 
   @override
   void didChangeDependencies() {
@@ -42,7 +37,7 @@ class _ListTextScreenState extends State<ListTextScreen>
         return ListView.builder(
           itemCount: data.length,
           itemBuilder: (BuildContext context, int index) {
-            return Text(data[index]);
+            return data[index].buildItem();
           },
         );
       },
@@ -53,7 +48,7 @@ class _ListTextScreenState extends State<ListTextScreen>
     if (value == null) return;
     if (value.index != widget.index) return;
 
-    data.add(value.title);
+    data.add(value);
   }
 
   @override

@@ -20,9 +20,9 @@ class _SingleSubscriptionStreamScreenState extends State<SingleSubscriptionStrea
 
     //region listen
 
-    counterStreamController.streamController.stream.listen((event) {
-      print(event);
-    });
+    // counterStreamController.streamController.stream.listen((event) {
+    //   print(event);
+    // });
 
     //endregion
     super.initState();

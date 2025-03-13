@@ -27,7 +27,7 @@ class _StreamScreenState extends State<StreamScreen> {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             StreamBuilder(
-              stream: counterStream.getIterableFuture(),
+              stream: counterStream.getAll(),
               builder: (BuildContext context, AsyncSnapshot snapshot) {
 
                 if (snapshot.hasData) {

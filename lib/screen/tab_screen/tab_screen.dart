@@ -1,12 +1,67 @@
 import 'package:flutter/material.dart';
-import 'package:trainning/screen/tab_screen/inherited_tab_controller.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:trainning/screen/tab_screen/list_text_screen.dart';
+import 'package:trainning/utils/app_images/app_images.dart';
 
 class InsertData {
   final String title;
   final int index;
 
   InsertData(this.title, this.index);
+
+  Widget buildItem() {
+    return const SizedBox();
+  }
+
+  static InsertData createInitData(String title, int index) {
+    switch (index) {
+      case 1:
+        return InsertDataTab1(title);
+      case 2:
+        return InsertDataTab2(title);
+      case 3:
+        return InsertDataTab3(title);
+      default:
+        throw UnimplementedError();
+    }
+  }
+}
+
+class InsertDataTab1 extends InsertData {
+  InsertDataTab1(String title) : super(title, 1);
+
+  @override
+  Widget buildItem() {
+    return Text('Data $title');
+  }
+}
+
+class InsertDataTab2 extends InsertData {
+  InsertDataTab2(String title) : super(title, 2);
+
+  @override
+  Widget buildItem() {
+    return Row(
+      children: [
+        SvgPicture.asset(
+          AppImages.icPlusPlus,
+        ),
+        Text('Data $title')
+      ],
+    );
+  }
+}
+
+class InsertDataTab3 extends InsertData {
+  InsertDataTab3(String title) : super(title, 3);
+
+  @override
+  Widget buildItem() {
+    List<String> list = title.split('');
+    return Wrap(
+      children: list.map((element) => Text("$element|")).toList(),
+    );
+  }
 }
 
 class TabData {
@@ -47,18 +102,6 @@ class _TabScreenState extends State<TabScreen> with TickerProviderStateMixin {
           const ListTextScreen(
             title: 'Tab 3',
             index: 3,
-          )),
-      TabData(
-          'Tab 4',
-          const ListTextScreen(
-            title: 'Tab 4',
-            index: 4,
-          )),
-      TabData(
-          'Tab 5',
-          const ListTextScreen(
-            title: 'Tab 5',
-            index: 5,
           )),
     ]);
 

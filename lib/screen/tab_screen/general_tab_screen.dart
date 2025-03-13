@@ -23,9 +23,7 @@ class _GeneralTabScreenState extends State<GeneralTabScreen> {
     indexEditingController = TextEditingController();
     textEditingController = TextEditingController();
     valueNotifier = ValueNotifier(null);
-    valueNotifier.addListener(() {
-      print(valueNotifier.value?.title);
-    });
+    valueNotifier.addListener(() {});
     super.initState();
   }
 
@@ -55,9 +53,9 @@ class _GeneralTabScreenState extends State<GeneralTabScreen> {
               TextButton(
                   onPressed: () {
                     // setState(() {});
-                    timerAdd();
-                    // valueNotifier.value = InsertData(textEditingController.text,
-                    //     int.parse(indexEditingController.text));
+                    valueNotifier.value = InsertData.createInitData(
+                        textEditingController.text,
+                        int.parse(indexEditingController.text));
                   },
                   child: const Text("ADD")),
               // Co(
@@ -108,19 +106,19 @@ class _CoState extends State<Co> {
   }
 }
 
-
 class InputWidget extends StatelessWidget {
   final TextEditingController textEditingController;
   final TextEditingController textEditingController1;
   final List<String> list;
-   const InputWidget(
+
+  const InputWidget(
       {super.key,
       required this.textEditingController,
-      required this.textEditingController1, required this.list});
+      required this.textEditingController1,
+      required this.list});
 
   @override
   Widget build(BuildContext context) {
-    
     return Column(
       children: [
         TextField(

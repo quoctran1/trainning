@@ -17,7 +17,7 @@ class CounterStream {
 
   Future<int> createCountFuture() async {
     int count = 0;
-    for (int i = 1; i <= 5; i++) {
+    for (int i = 1; i <= 7; i++) {
       await Future.delayed(const Duration(seconds: 1));
       count += i;
     }
@@ -38,12 +38,22 @@ class CounterStream {
   }
 
   Stream<int> getListFuture() async* {
-    yield* Stream.fromFutures(
-        [createCountFuture(), simpleFuture(), simpleFuture1()]);
+    yield* Stream.fromFutures([
+      createCountFuture(),
+      simpleFuture(),
+      simpleFuture1(),
+    ]);
   }
 
   Stream<String> getIterableFuture() async* {
-    List<String> userIds = ['1', '2', '3', '5', '6', '7'];
+    List<String> userIds = [
+      '1',
+      '2',
+      '3',
+      '5',
+      '6',
+      '7',
+    ];
     final streamIterable = Stream.fromIterable(userIds);
     // Call getUserInfo asynchronously
     yield* streamIterable.asyncMap((id) async {
@@ -54,7 +64,9 @@ class CounterStream {
 
   Future<String> getUserInfo(String id) async {
     int second = Random().nextInt(4);
-    await Future.delayed(Duration(seconds: second));
+    await Future.delayed(Duration(
+      seconds: second,
+    ));
 
     return 'id: $id ----- $second';
   }
