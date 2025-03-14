@@ -1,3 +1,5 @@
+import 'package:firebase_analytics/firebase_analytics.dart';
+import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:flutter/material.dart';
 import 'package:trainning/screen/bloc_screen/bloc_provider_screen.dart';
 import 'package:trainning/screen/bloc_screen/bloc_screen.dart';
@@ -98,6 +100,9 @@ class _MyHomePageState extends State<MyHomePage> {
             HomeButtonWidget(
               title: FlavorConfig.instance?.values.baseUrl ?? "",
               onTap: () {
+                FirebaseAnalytics.instance.logEvent(
+                    name: 'open_screen', parameters: {"name": "maowd"});
+
                 Navigator.push<void>(
                   context,
                   MaterialPageRoute<void>(
