@@ -376,7 +376,7 @@ class _MyHomePageState extends State<MyHomePage> {
               color: Colors.red,
             ),
             HomeButtonWidget(
-              title: 'FutureScreen',
+              title: 'FixScreen',
               onTap: () {
                 Navigator.push<void>(
                   context,
@@ -463,7 +463,7 @@ class _MyHomePageState extends State<MyHomePage> {
               },
             ),
             HomeButtonWidget(
-              title: 'MainSrceen',
+              title: 'ReplaySubjectScreen',
               onTap: () {
                 Navigator.push<void>(
                   context,

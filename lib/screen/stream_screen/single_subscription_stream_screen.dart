@@ -42,7 +42,7 @@ class _SingleSubscriptionStreamScreenState extends State<SingleSubscriptionStrea
           children: [
             StreamBuilder<int>(
               initialData: 1110,
-              stream: counterStreamController.getStream,
+              stream: counterStreamController.getStreamTransform,
               builder: (BuildContext context, AsyncSnapshot<int> snapshot) {
                 if (snapshot.hasData) {
                   return Text("${snapshot.data} ${Random().nextInt(20)}");
@@ -55,8 +55,6 @@ class _SingleSubscriptionStreamScreenState extends State<SingleSubscriptionStrea
                 onTap: () {
                   counterStreamController.addData();
                 }),
-            const SizedBox(height: 100,width: 100,),
-              Container(height: 100,width: 100,)
 
           ],
         ),

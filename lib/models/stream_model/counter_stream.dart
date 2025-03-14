@@ -2,7 +2,7 @@ import 'dart:math';
 
 class CounterStream {
   Stream<int> createCountStream() async* {
-    for (int i = 1; i <= 10; i++) {
+    for (int i = 1; i <= 30; i++) {
       await Future.delayed(const Duration(seconds: 1));
       yield i;
     }

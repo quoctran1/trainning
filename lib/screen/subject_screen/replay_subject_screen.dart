@@ -10,7 +10,7 @@ class ReplaySubjectScreen extends StatefulWidget {
 }
 
 class _ReplaySubjectScreenState extends State<ReplaySubjectScreen> {
-  final ReplaySubject<int> subject = ReplaySubject<int>();
+  final ReplaySubject<int> subject = ReplaySubject<int>(maxSize: 2);
 
   @override
   void dispose() {
@@ -28,7 +28,8 @@ class _ReplaySubjectScreenState extends State<ReplaySubjectScreen> {
                 title: 'callSubject',
                 onTap: () {
                   callSubject();
-                }) ,HomeButtonWidget(
+                }),
+            HomeButtonWidget(
                 title: 'values',
                 onTap: () {
                   print(subject.values);
