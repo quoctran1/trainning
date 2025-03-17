@@ -17,11 +17,11 @@ class _ExpandScreenState extends State<ExpandScreen> {
             Flexible(
                 fit: FlexFit.tight,
                 flex: 1,
-                child: Container(color: Colors.red, child: Text('Red'))),
+                child: Container(color: Colors.red, child: const Text('Red'))),
             Flexible(
                 fit: FlexFit.tight,
                 flex: 1,
-                child: Container(color: Colors.green, child: Text('green'))),
+                child: Container(color: Colors.green, child: const Text('green'))),
           ],
         ),
       ),

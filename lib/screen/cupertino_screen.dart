@@ -33,7 +33,7 @@ class _CupertinoScreenState extends State<CupertinoScreen> {
         switch (index) {
           case 0:
             return CupertinoTabView(builder: (context) {
-              return CupertinoPageScaffold(
+              return const CupertinoPageScaffold(
                 child: SearchTab(),
               );
             });
@@ -65,7 +65,7 @@ class SearchTab extends StatefulWidget {
   const SearchTab({super.key});
 
   @override
-  _SearchTabState createState() {
+  State<SearchTab> createState() {
     return _SearchTabState();
   }
 }

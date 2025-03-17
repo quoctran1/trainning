@@ -17,7 +17,7 @@ class _ListViewSeparateScreenState extends State<ListViewSeparateScreen> {
           return getItem(index);
         },
         separatorBuilder: (BuildContext context, int index) {
-          return Divider(
+          return const Divider(
             color: Colors.red,
           );
         },

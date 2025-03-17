@@ -70,7 +70,7 @@ class _GeneralTabScreenState extends State<GeneralTabScreen> {
   }
 
   void timerAdd() {
-    timer = Timer.periodic(Duration(seconds: 1), (timer) {
+    timer = Timer.periodic(const Duration(seconds: 1), (timer) {
       valueNotifier.value = InsertData(
           Random.secure().nextInt(12).toString(), Random.secure().nextInt(12));
     });

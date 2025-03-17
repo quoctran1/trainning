@@ -9,7 +9,6 @@ import 'package:trainning/utils/flavor_configs.dart';
 
 void main() {
   runZonedGuarded<Future<void>>(() async {
-    WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
     await Future.wait([
       Firebase.initializeApp(),
     ]);

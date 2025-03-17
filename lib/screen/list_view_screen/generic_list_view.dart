@@ -15,14 +15,30 @@ class _GenericListViewState<T> extends State<GenericListView<T>> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: ListView.builder(
-        itemCount: widget.data.length,
-        reverse: true,
-        physics: const AlwaysScrollableScrollPhysics(),
-        itemBuilder: (BuildContext context, int index) {
-          return widget.buildItem(index, widget.data[index]);
-        },
-      ),
+      body: widget.data.isEmpty
+          ? const Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisSize: MainAxisSize.max,
+              children: [
+                Icon(
+                  Icons.not_listed_location_outlined,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text('No data'),
+                  ],
+                ),
+              ],
+            )
+          : ListView.builder(
+              itemCount: widget.data.length,
+              physics: const AlwaysScrollableScrollPhysics(),
+              itemBuilder: (BuildContext context, int index) {
+                return widget.buildItem(index, widget.data[index]);
+              },
+            ),
     );
   }
 }

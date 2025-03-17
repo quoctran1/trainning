@@ -1,7 +1,5 @@
-import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'package:trainning/screen/tab_screen/inherited_tab_controller.dart';
 import 'package:trainning/screen/tab_screen/tab_screen.dart';
 

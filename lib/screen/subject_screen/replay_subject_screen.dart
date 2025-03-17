@@ -33,7 +33,7 @@ class _ReplaySubjectScreenState extends State<ReplaySubjectScreen> {
                 title: 'values',
                 onTap: () {
                   print(subject.values);
-                  ;
+
                 })
           ],
         ),

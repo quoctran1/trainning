@@ -1,4 +1,3 @@
-import 'dart:isolate';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -74,7 +73,7 @@ class _IsolateScreenState extends State<IsolateScreen> {
     );
   }
 
-  onClickSubmit(int value) {
+  void onClickSubmit(int value) {
     completeNotifier.value = true;
     heavyLoop(value);
   }

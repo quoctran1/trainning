@@ -1,8 +1,8 @@
 import 'package:firebase_analytics/firebase_analytics.dart';
-import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:flutter/material.dart';
 import 'package:trainning/screen/bloc_screen/bloc_provider_screen.dart';
 import 'package:trainning/screen/bloc_screen/bloc_screen.dart';
+import 'package:trainning/screen/bloc_screen/loading_bloc_screen.dart';
 import 'package:trainning/screen/cupertino_screen.dart';
 import 'package:trainning/screen/form/form_screen.dart';
 import 'package:trainning/screen/form/text_field_screen.dart';
@@ -24,7 +24,6 @@ import 'package:trainning/screen/stream_screen/stream_broadcast_screen.dart';
 import 'package:trainning/screen/stream_screen/single_subscription_stream_screen.dart';
 import 'package:trainning/screen/subject_screen/publish_subject_screen.dart';
 import 'package:trainning/screen/subject_screen/replay_subject_screen.dart';
-import 'package:trainning/screen/tab_screen/tab_screen.dart';
 import 'package:trainning/screen/value_notifier_screen.dart';
 import 'package:trainning/utils/flavor_configs.dart';
 import 'package:trainning/widget/home_button_widget.dart';
@@ -481,6 +480,18 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             const Divider(
               color: Colors.red,
+            ),
+            HomeButtonWidget(
+              title: 'LoadingBlocScreen',
+              onTap: () {
+                Navigator.push<void>(
+                  context,
+                  MaterialPageRoute<void>(
+                    builder: (BuildContext context) =>
+                        const LoadingBlocScreen(),
+                  ),
+                );
+              },
             ),
             HomeButtonWidget(
               title: 'BlocScreen',

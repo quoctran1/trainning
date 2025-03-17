@@ -28,8 +28,8 @@ class _BlocProviderScreenState extends State<BlocProviderScreen> {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) => counterCubit,
-      // child: const CounterView(),
-      child: const CounterViewSecond(),
+      child: const CounterView(),
+      // child: const CounterViewSecond(),
     );
   }
 }
@@ -46,7 +46,7 @@ class CounterView extends StatelessWidget {
         child: BlocBuilder<CounterCubit, int>(
           builder: (context, state) {
             return Text('BlocProvider inherited: $state',
-                style: textTheme.displayMedium);
+                style: textTheme.displaySmall);
           },
         ),
       ),
