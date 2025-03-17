@@ -4,6 +4,7 @@ import 'package:trainning/screen/bloc_screen/bloc_provider_screen.dart';
 import 'package:trainning/screen/bloc_screen/bloc_screen.dart';
 import 'package:trainning/screen/bloc_screen/loading_bloc_screen.dart';
 import 'package:trainning/screen/cupertino_screen.dart';
+import 'package:trainning/screen/firebase_screen/remote_config_controller.dart';
 import 'package:trainning/screen/firebase_screen/remote_config_screen.dart';
 import 'package:trainning/screen/form/form_screen.dart';
 import 'package:trainning/screen/form/text_field_screen.dart';
@@ -79,7 +80,13 @@ class _MyHomePageState extends State<MyHomePage> {
   late String dw;
   late ValueNotifier<String> notifier;
 
-  void onClickSubmit() {}
+  @override
+  void initState() {
+    notifier = ValueNotifier('');
+    RemoteConfigController().setListener();
+
+    super.initState();
+  }
 
   @override
   void dispose() {
@@ -553,11 +560,5 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
     );
-  }
-
-  @override
-  void initState() {
-    notifier = ValueNotifier('');
-    super.initState();
   }
 }

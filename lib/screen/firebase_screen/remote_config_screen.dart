@@ -10,20 +10,17 @@ class RemoteConfigScreen extends StatefulWidget {
 
 class _RemoteConfigScreenState extends State<RemoteConfigScreen> {
   @override
-  void initState() {
-    RemoteConfigController().setListener();
-    super.initState();
-  }
-  @override
-  void dispose() {
-    RemoteConfigController(). dispose();
-    super.dispose();
-  }
-  @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-          child: Text(RemoteConfigController().isForceUpdate().toString())),
+          child: StreamBuilder(
+            initialData: RemoteConfigController().isForceUpdate().toString(),
+              stream: RemoteConfigController().remoteConfig.onConfigUpdated,
+              builder: (context, snapshot) {
+                if (!snapshot.hasData) return const SizedBox();
+                return Text(
+                    RemoteConfigController().isForceUpdate().toString());
+              })),
     );
   }
 }
