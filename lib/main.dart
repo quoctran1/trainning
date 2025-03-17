@@ -4,6 +4,7 @@ import 'package:trainning/screen/bloc_screen/bloc_provider_screen.dart';
 import 'package:trainning/screen/bloc_screen/bloc_screen.dart';
 import 'package:trainning/screen/bloc_screen/loading_bloc_screen.dart';
 import 'package:trainning/screen/cupertino_screen.dart';
+import 'package:trainning/screen/firebase_screen/remote_config_screen.dart';
 import 'package:trainning/screen/form/form_screen.dart';
 import 'package:trainning/screen/form/text_field_screen.dart';
 import 'package:trainning/screen/future_screen/future_screen.dart';
@@ -526,6 +527,21 @@ class _MyHomePageState extends State<MyHomePage> {
                   context,
                   MaterialPageRoute<void>(
                     builder: (BuildContext context) => const IsolateScreen(),
+                  ),
+                );
+              },
+            ),
+            const Divider(
+              color: Colors.red,
+            ),
+            HomeButtonWidget(
+              title: 'RemoteConfigScreen',
+              onTap: () {
+                Navigator.push<void>(
+                  context,
+                  MaterialPageRoute<void>(
+                    builder: (BuildContext context) =>
+                        const RemoteConfigScreen(),
                   ),
                 );
               },
