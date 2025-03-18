@@ -1,5 +1,6 @@
 import 'dart:async';
-import 'dart:math';
+import 'dart:developer';
+import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
 import 'package:trainning/models/stream_model/counter_stream_controller.dart';
@@ -26,7 +27,7 @@ class _StreamBroadcastScreenState extends State<StreamBroadcastScreen> {
     //   print("listen: $event");
     // });
     streamSubscription = counterStreamController.getStream.listen((event) {
-      print('streamSubscription : $event');
+      log('streamSubscription : $event');
     });
    // streamSubscription = counterStreamController.getStreamTransform.listen((event) {
    //    print('getStreamTransform : $event');
@@ -55,7 +56,7 @@ class _StreamBroadcastScreenState extends State<StreamBroadcastScreen> {
               stream: counterStreamController.getStreamTransform,
               builder: (BuildContext context, AsyncSnapshot<int> snapshot) {
                 if (snapshot.hasData) {
-                  return Text("${snapshot.data} ${Random().nextInt(20)}");
+                  return Text("${snapshot.data} ${math.Random().nextInt(20)}");
                 }
                 return const Text('Error');
               },

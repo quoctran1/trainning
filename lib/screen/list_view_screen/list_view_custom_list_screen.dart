@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 
 class ListViewCustomListScreen extends StatefulWidget {
@@ -29,7 +31,7 @@ class _ListViewCustomListScreenState extends State<ListViewCustomListScreen> {
     );
   }
   Widget getItem(int index) {
-    print('Index $index');
+    log('Index $index');
     return Container(
       height: 300,
       margin: const EdgeInsets.all(8),

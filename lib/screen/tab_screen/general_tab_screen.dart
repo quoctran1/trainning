@@ -1,5 +1,6 @@
 import 'dart:async';
-import 'dart:math';
+import 'dart:developer';
+import 'dart:math'as math;
 
 import 'package:flutter/material.dart';
 import 'package:trainning/screen/tab_screen/inherited_tab_controller.dart';
@@ -72,7 +73,7 @@ class _GeneralTabScreenState extends State<GeneralTabScreen> {
   void timerAdd() {
     timer = Timer.periodic(const Duration(seconds: 1), (timer) {
       valueNotifier.value = InsertData(
-          Random.secure().nextInt(12).toString(), Random.secure().nextInt(12));
+          math.Random.secure().nextInt(12).toString(),math. Random.secure().nextInt(12));
     });
   }
 }
@@ -89,13 +90,13 @@ class Co extends StatefulWidget {
 class _CoState extends State<Co> {
   @override
   void didChangeDependencies() {
-    print('didChangeDependencies');
+    log('didChangeDependencies');
     super.didChangeDependencies();
   }
 
   @override
   void didUpdateWidget(covariant Co oldWidget) {
-    print('didUpdateWidget');
+    log('didUpdateWidget');
 
     super.didUpdateWidget(oldWidget);
   }

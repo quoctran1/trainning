@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter_test/flutter_test.dart';
 import 'package:trainning/models/company.dart';
 
@@ -13,7 +15,7 @@ void main() {
   group('Nullable', () {
     test('Non-null', () {
       final user = User.fromJson(data);
-      print(user);
+      log(user.toString());
     });
   });
 }

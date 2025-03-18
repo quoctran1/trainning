@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:rxdart/rxdart.dart';
 import 'package:trainning/widget/home_button_widget.dart';
@@ -37,16 +39,16 @@ class _BehaviourSubjectScreenState extends State<BehaviourSubjectScreen> {
 
   void callSubject() {
     // Add a listener
-    subject.listen((a) => print("listener 1 : $a"));
+    subject.listen((a) => log("listener 1 : $a"));
 
     subject.add(1);
     subject.add(2);
 
-    subject.listen((a) => print("listener 2 : $a"));
+    subject.listen((a) => log("listener 2 : $a"));
 
     subject.add(3);
 
-    subject.listen((a) => print("listener 3 : $a"));
+    subject.listen((a) => log("listener 3 : $a"));
 
     subject.add(4);
 

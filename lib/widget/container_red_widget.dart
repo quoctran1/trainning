@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 
 class ContainerRedWidget extends StatefulWidget {
@@ -12,7 +14,7 @@ class ContainerRedWidget extends StatefulWidget {
 class _ContainerRedWidgetState extends State<ContainerRedWidget> {
   @override
   Widget build(BuildContext context) {
-    print('ContainerRedWidget');
+    log('ContainerRedWidget');
 
     return Container(
       color: Colors.red,

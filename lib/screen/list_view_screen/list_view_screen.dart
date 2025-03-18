@@ -1,4 +1,6 @@
 
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 
 
@@ -45,7 +47,7 @@ class _ListViewScreenState extends State<ListViewScreen> {
   }
 
   Widget getItem(int index) {
-    print('Index $index');
+    log('Index $index');
     return Container(
       height: 300,
       margin: const EdgeInsets.all(8),

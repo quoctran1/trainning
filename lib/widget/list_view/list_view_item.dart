@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 
 class ListItemWidget extends StatelessWidget {
@@ -7,7 +9,7 @@ class ListItemWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print(title);
+    log(title);
 
     return Container(
         margin: const EdgeInsets.symmetric(vertical: 10),

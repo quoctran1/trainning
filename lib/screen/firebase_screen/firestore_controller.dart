@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:trainning/models/app_info/app_info.dart';
 
@@ -19,9 +21,9 @@ class FireStoreController {
       'age': 25,
       'createdAt': FieldValue.serverTimestamp(),
     }).then((value) {
-      print("User Added with ID: ${value.id}");
+      log("User Added with ID: ${value.id}");
     }).catchError((error) {
-      print("Failed to add user: $error");
+      log("Failed to add user: $error");
     });
   }
 
@@ -32,10 +34,10 @@ class FireStoreController {
           .orderBy('name')
           .startAt(['Jo']).endAt(['Jo' '\uf8ff']).get();
       for (var doc in querySnapshot.docs) {
-        print(doc.data());
+        log(doc.data().toString());
       }
     } catch (e) {
-      print(e);
+      log(e.toString());
     }
   }
 
@@ -46,7 +48,7 @@ class FireStoreController {
           .doc('VV8JUPvA60RxytYY2Pmx')
           .delete();
     } catch (e) {
-      print(e);
+      log(e.toString());
     }
   }
 
@@ -57,7 +59,7 @@ class FireStoreController {
           .doc('VV8JUPvA60RxytYY2Pmx')
           .update({"name": "asd"});
     } catch (e) {
-      print(e);
+      log(e.toString());
     }
   }
 }

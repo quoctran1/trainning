@@ -13,11 +13,3 @@ void main() {
     });
   });
 }
-
-void doSomeThing(Function function) {
-  print('header');
-
-  function();
-
-  print('tail');
-}

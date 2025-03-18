@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:trainning/widget/home_button_widget.dart';
@@ -47,7 +49,7 @@ class _TextFieldScreenState extends State<TextFieldScreen> {
             ],
             textInputAction: TextInputAction.next,
             onChanged: (value) {
-              print('onchange: $value');
+             log('onchange: $value');
             },
           ),
           TextField(
@@ -57,13 +59,13 @@ class _TextFieldScreenState extends State<TextFieldScreen> {
                 label: Text('Password'), hintText: 'Hint'),
             textInputAction: TextInputAction.done,
             onSubmitted: (value) {
-              print('onSubmitted: $value');
+             log('onSubmitted: $value');
             },
           ),
           HomeButtonWidget(
               title: 'Submit',
               onTap: () {
-                print('adwawdaw');
+                log('adwawdaw');
                 // focusName.unfocus();
 
               })

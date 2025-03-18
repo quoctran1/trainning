@@ -1,4 +1,5 @@
-import 'dart:math';
+import 'dart:developer';
+import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
 import 'package:trainning/widget/home_button_widget.dart';
@@ -44,7 +45,7 @@ class _FutureScreenState extends State<FutureScreen> {
             FutureBuilder<int>(
               future: getInt(),
               builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
-                print(snapshot.connectionState);
+                log(snapshot.connectionState.toString());
                 if (snapshot.hasData) {
                   return Text(
                       "snapshot.hasData: ${snapshot.hasData} /Data: ${snapshot.data}");
@@ -64,21 +65,21 @@ class _FutureScreenState extends State<FutureScreen> {
 
   //region Sync
   void onTapSync() {
-    print('Start Sync');
+    log('Start Sync');
 
     timeConsumingFunction();
-    print('Main function completed:  ');
+    log('Main function completed:  ');
   }
 
   int timeConsumingFunction() {
-    print('Function started...');
+    log('Function started...');
 
     int count = 0;
     for (int i = 0; i < 2000000000; i++) {
       count += i;
     }
 
-    print('Function completed.');
+    log('Function completed.');
     return count;
   }
 
@@ -86,7 +87,7 @@ class _FutureScreenState extends State<FutureScreen> {
 
   //region Async
   void onTapASync() async {
-    print('Start');
+    log('Start');
 
     // timeConsumingFunctionFuture().then((int value) => print(value));
 
@@ -102,18 +103,18 @@ class _FutureScreenState extends State<FutureScreen> {
     //     .then((int value) => print(value))
     //     .timeout(const Duration(seconds: 2));
 
-    print('Main function completed ');
+    log('Main function completed ');
   }
 
   Future<int> timeConsumingFunctionFuture() async {
-    print('Function started...');
+    log('Function started...');
     await Future<void>.delayed(const Duration(seconds: 4));
     int count = 0;
     for (int i = 0; i < 10; i++) {
       count += i;
     }
 
-    print('Function completed.');
+   log('Function completed.');
     return count;
   }
 
@@ -121,6 +122,6 @@ class _FutureScreenState extends State<FutureScreen> {
   Future<int> getInt() async {
     await Future.delayed(const Duration(seconds: 2));
     // throw Exception();
-    return Random().nextInt(20);
+    return math.Random().nextInt(20);
   }
 }

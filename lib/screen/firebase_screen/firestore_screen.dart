@@ -14,38 +14,40 @@ class _FireStoreScreenState extends State<FireStoreScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Column(
-          children: [
-            FutureBuilder(
-              future: FireStoreController().fetchCommunity(),
-              builder:
-                  (BuildContext context, AsyncSnapshot<AppInfo?> snapshot) {
-                if (!snapshot.hasData) return const SizedBox();
-                return Text(snapshot.data!.info?.name ?? "");
-              },
-            ),
-            HomeButtonWidget(
-                title: 'Add Collection',
-                onTap: () {
-                  FireStoreController().addCollection();
-                }),
-            HomeButtonWidget(
-                title: 'Search',
-                onTap: () {
-                  FireStoreController().searchDocument('b');
-                }),
-            HomeButtonWidget(
-                title: 'updateDocument',
-                onTap: () {
-                  FireStoreController().updateDocument();
-                }),
-            HomeButtonWidget(
-                title: 'deleteDocument',
-                onTap: () {
-                  FireStoreController().deleteDocument();
-                }),
-          ],
+      body: SafeArea(
+        child: Center(
+          child: Column(
+            children: [
+              FutureBuilder(
+                future: FireStoreController().fetchCommunity(),
+                builder:
+                    (BuildContext context, AsyncSnapshot<AppInfo?> snapshot) {
+                  if (!snapshot.hasData) return const SizedBox();
+                  return Text(snapshot.data!.info?.name ?? "");
+                },
+              ),
+              HomeButtonWidget(
+                  title: 'Add Collection',
+                  onTap: () {
+                    FireStoreController().addCollection();
+                  }),
+              HomeButtonWidget(
+                  title: 'Search',
+                  onTap: () {
+                    FireStoreController().searchDocument('b');
+                  }),
+              HomeButtonWidget(
+                  title: 'updateDocument',
+                  onTap: () {
+                    FireStoreController().updateDocument();
+                  }),
+              HomeButtonWidget(
+                  title: 'deleteDocument',
+                  onTap: () {
+                    FireStoreController().deleteDocument();
+                  }),
+            ],
+          ),
         ),
       ),
     );

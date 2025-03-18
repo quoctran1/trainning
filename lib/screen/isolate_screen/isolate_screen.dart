@@ -1,3 +1,4 @@
+import 'dart:developer';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -62,7 +63,7 @@ class _IsolateScreenState extends State<IsolateScreen> {
                     title: 'Isolate',
                     onTap: () {
                       // completeNotifier.value = true;
-                      compute(heavyLoop,4000000000);
+                      compute(heavyLoop, 4000000000);
                       // IsolateController().callFunction(5000000000);
                     }),
               ],
@@ -77,7 +78,6 @@ class _IsolateScreenState extends State<IsolateScreen> {
     completeNotifier.value = true;
     heavyLoop(value);
   }
-
 }
 
 class IsolateController {
@@ -87,19 +87,15 @@ class IsolateController {
   }
 
   void heavyLoop(int value) {
-    print('start loop');
-    int count = 0;
+    log('start loop');
     for (int i = 0; i < value; i++) {
-      count += i;
     }
-    print('end loop');
+    log('end loop');
   }
 }
+
 void heavyLoop(int value) {
-  print('start loop');
-  int count = 0;
-  for (int i = 0; i < value; i++) {
-    count += i;
-  }
-  print('end loop');
+  log('start loop');
+  for (int i = 0; i < value; i++) {}
+  log('end loop');
 }

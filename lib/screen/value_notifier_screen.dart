@@ -1,5 +1,6 @@
 import 'dart:async';
-import 'dart:math';
+import 'dart:developer';
+import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
 import 'package:trainning/widget/container_blue_widget.dart';
@@ -18,7 +19,7 @@ class _ValueNotifierScreenState extends State<ValueNotifierScreen> {
   late ValueNotifier<String> valueNotifierString;
   String blue = 'blue', red = 'red', yellow = 'yellow';
   Name nameVar = Name('1');
-  late Timer timer;
+  Timer? timer;
 
   @override
   void initState() {
@@ -30,7 +31,7 @@ class _ValueNotifierScreenState extends State<ValueNotifierScreen> {
 
   @override
   void dispose() {
-    timer.cancel();
+    timer?.cancel();
     valueNotifierString.dispose();
 
     super.dispose();
@@ -82,11 +83,11 @@ class _ValueNotifierScreenState extends State<ValueNotifierScreen> {
   }
 
   void updateData() {
-    valueNotifierString.value = Random().nextInt(100).toString();
+    valueNotifierString.value = math.Random().nextInt(100).toString();
   }
 
   void listenData() {
-    print('Data: ${valueNotifierString.value}');
+    log('Data: ${valueNotifierString.value}');
   }
 }
 

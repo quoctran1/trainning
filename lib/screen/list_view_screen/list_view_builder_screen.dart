@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:rxdart/rxdart.dart';
 
@@ -94,7 +96,7 @@ class _ListScreenState extends State<ListScreen> {
   }
 
   Widget getItem(int index) {
-    print('Index $index');
+    log('Index $index');
     return Container(
       height: 300,
       margin: const EdgeInsets.all(8),

@@ -1,4 +1,5 @@
-import 'dart:math';
+import 'dart:developer';
+import 'dart:math' as  math;
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -40,9 +41,9 @@ class _BlocScreenState extends State<BlocScreen> {
               BlocListener(
                 bloc: counterCubit,
                 listener: (BuildContext context, state) {
-                  print("BlocListener: $state");
+                log("BlocListener: $state");
                 },
-                child: Text('Random : ${Random().nextInt(10)}'),
+                child: Text('Random : ${math.Random().nextInt(10)}'),
               ),
               const Divider(
                 color: Colors.red,
@@ -61,7 +62,7 @@ class _BlocScreenState extends State<BlocScreen> {
               BlocConsumer(
                 bloc: counterCubit,
                 listener: (BuildContext context, state) {
-                  print("BlocConsumer: $state");
+                  log("BlocConsumer: $state");
                 },
                 builder: (BuildContext context, Object? state) {
                   return Text('$state');
