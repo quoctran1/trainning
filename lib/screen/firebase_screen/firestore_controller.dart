@@ -29,11 +29,33 @@ class FireStoreController {
     try {
       QuerySnapshot querySnapshot = await FirebaseFirestore.instance
           .collection('record')
-          .where(name)
-          .get();
+          .orderBy('name')
+          .startAt(['Jo']).endAt(['Jo' '\uf8ff']).get();
       for (var doc in querySnapshot.docs) {
         print(doc.data());
       }
+    } catch (e) {
+      print(e);
+    }
+  }
+
+  Future<void> deleteDocument( ) async {
+    try {
+      await FirebaseFirestore.instance
+          .collection('record')
+          .doc('VV8JUPvA60RxytYY2Pmx')
+          .delete();
+    } catch (e) {
+      print(e);
+    }
+  }
+
+  Future<void> updateDocument() async {
+    try {
+      await FirebaseFirestore.instance
+          .collection('record')
+          .doc('VV8JUPvA60RxytYY2Pmx')
+          .update({"name": "asd"});
     } catch (e) {
       print(e);
     }

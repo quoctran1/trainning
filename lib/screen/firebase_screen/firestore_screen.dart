@@ -35,6 +35,16 @@ class _FireStoreScreenState extends State<FireStoreScreen> {
                 onTap: () {
                   FireStoreController().searchDocument('b');
                 }),
+            HomeButtonWidget(
+                title: 'updateDocument',
+                onTap: () {
+                  FireStoreController().updateDocument();
+                }),
+            HomeButtonWidget(
+                title: 'deleteDocument',
+                onTap: () {
+                  FireStoreController().deleteDocument();
+                }),
           ],
         ),
       ),

@@ -51,17 +51,4 @@ class MyProfile {
       profile4,
     ];
   }
-  /*
-  Firstname, Lastname nếu null thì hiển thị Unknown
-  FullName= Firstname+ MiddleName+ Lastname
-  Age: nếu null thì ẩn đi
-  Reward: lấy 5 item đầu tiên trong danh sách, nối nhau bằng dấu phẩy
-
-  Tạo 1 text field, tìm profile dựa theo Firstname, chỉ lấy 1 kết quả đầu tiên, sử dụng UI như trên, nếu không tìm thấy thì tất cả các field sẽ hiện Unknown data
-
-  Sử dụng cấu trúc hàm như sau:
-  MyProfile? searchName(String searchText){
-
-    }
-  */
 }

@@ -14,7 +14,7 @@ class _RemoteConfigScreenState extends State<RemoteConfigScreen> {
     return Scaffold(
       body: Center(
           child: StreamBuilder(
-            initialData: RemoteConfigController().isForceUpdate().toString(),
+              initialData: RemoteConfigController().isForceUpdate().toString(),
               stream: RemoteConfigController().remoteConfig.onConfigUpdated,
               builder: (context, snapshot) {
                 if (!snapshot.hasData) return const SizedBox();
@@ -23,4 +23,5 @@ class _RemoteConfigScreenState extends State<RemoteConfigScreen> {
               })),
     );
   }
+
 }
