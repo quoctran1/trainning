@@ -1,5 +1,6 @@
 import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/material.dart';
+import 'package:trainning/screen/animation/animation_screen.dart';
 import 'package:trainning/screen/bloc_screen/bloc_provider_screen.dart';
 import 'package:trainning/screen/bloc_screen/bloc_screen.dart';
 import 'package:trainning/screen/bloc_screen/loading_bloc_screen.dart';
@@ -20,6 +21,7 @@ import 'package:trainning/screen/list_view_screen/list_view_custom_builder_scree
 import 'package:trainning/screen/list_view_screen/list_view_custom_list_screen.dart';
 import 'package:trainning/screen/list_view_screen/list_view_screen.dart';
 import 'package:trainning/screen/list_view_screen/list_view_seperate_screen.dart';
+import 'package:trainning/screen/method_channel_screen/method_channel_screen.dart';
 import 'package:trainning/screen/my_profile_screen.dart';
 import 'package:trainning/screen/nullable_screen.dart';
 import 'package:trainning/screen/oop_screen/oop_screen.dart';
@@ -561,6 +563,35 @@ class _MyHomePageState extends State<MyHomePage> {
                   context,
                   MaterialPageRoute<void>(
                     builder: (BuildContext context) => const FireStoreScreen(),
+                  ),
+                );
+              },
+            ),
+            const Divider(
+              color: Colors.red,
+            ),
+            HomeButtonWidget(
+              title: 'MethodChannelScreen',
+              onTap: () {
+                Navigator.push<void>(
+                  context,
+                  MaterialPageRoute<void>(
+                    builder: (BuildContext context) =>
+                        const MethodChannelScreen(),
+                  ),
+                );
+              },
+            ),
+            const Divider(
+              color: Colors.red,
+            ),
+            HomeButtonWidget(
+              title: 'AnimationScreen',
+              onTap: () {
+                Navigator.push<void>(
+                  context,
+                  MaterialPageRoute<void>(
+                    builder: (BuildContext context) => const AnimationScreen(),
                   ),
                 );
               },

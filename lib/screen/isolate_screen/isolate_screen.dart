@@ -62,8 +62,8 @@ class _IsolateScreenState extends State<IsolateScreen> {
                 HomeButtonWidget(
                     title: 'Isolate',
                     onTap: () {
-                      // completeNotifier.value = true;
-                      compute(heavyLoop, 4000000000);
+                      completeNotifier.value = true;
+                      compute(heavyLoop, 5000000000);
                       // IsolateController().callFunction(5000000000);
                     }),
               ],
