@@ -8,44 +8,66 @@ class SizeAnimationWidget extends StatefulWidget {
 }
 
 class _SizeAnimationWidgetState extends State<SizeAnimationWidget>
-    {
-  double _opacity = 1.0;
+    with TickerProviderStateMixin {
+  late Tween<Size> tween;
+  late Animation<Size> animation;
+  late AnimationController animationController;
+
+  @override
+  void initState() {
+    tween = Tween(begin: const Size(50, 50), end: const Size(100, 200));
+    animationController =
+        AnimationController(vsync: this, duration: const Duration(seconds: 2));
+
+    animation = tween.animate(
+        CurvedAnimation(parent: animationController, curve: Curves.linear));
+
+    animationController.addStatusListener((status) {
+      print(status);
+    });
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    animationController.dispose();
+
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       behavior: HitTestBehavior.opaque,
       onTap: () {
-        _toggleOpacity();
+        if (animationController.isCompleted) {
+          animationController.reverse();
+        } else {
+          animationController.forward();
+        }
       },
-      child: Container(
-        padding: const EdgeInsets.all(20),
-        decoration: BoxDecoration(
-            shape: BoxShape.circle,
-            color: Colors.black,
-            border: Border.all(color: Colors.green.shade300, width: 8)),
-        width: 120,
-        height: 120,
-        child: AnimatedOpacity(
-          opacity: _opacity,
-          duration: const Duration(seconds: 5),
-          child: const Center(
-              child: Text(
-            '1',
-            style: TextStyle(
-              color: Colors.white,
-              fontSize: 16,
-              fontWeight: FontWeight.bold,
+      child: AnimatedBuilder(
+        animation: animation,
+        builder: (BuildContext context, Widget? child) {
+          return Container(
+            width: animation.value.width,
+            height: animation.value.height,
+            color: Colors.red,
+            child: const Text(
+              '1',
+              style: TextStyle(
+                color: Colors.red,
+                fontSize: 16,
+                fontWeight: FontWeight.bold,
+              ),
             ),
-          )),
-        ),
+          );
+        },
       ),
     );
   }
 
   void _toggleOpacity() {
-    setState(() {
-      _opacity = _opacity == 1.0 ? 0.0 : 1.0;
-    });
+    setState(() {});
   }
 }

@@ -32,7 +32,6 @@ class _FlipCardItemState extends State<FlipCardItem>
       containerHeight = 0,
       containerWidth = 0,
       positionIcon = 0;
-  int countLoop = 0;
 
   @override
   void initState() {
