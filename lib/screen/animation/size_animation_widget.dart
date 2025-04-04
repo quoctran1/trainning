@@ -66,8 +66,4 @@ class _SizeAnimationWidgetState extends State<SizeAnimationWidget>
       ),
     );
   }
-
-  void _toggleOpacity() {
-    setState(() {});
-  }
 }

@@ -608,6 +608,17 @@ class _MyHomePageState extends State<MyHomePage> {
                 );
               },
             ),
+            HomeButtonWidget(
+              title: 'LinkableScreen',
+              onTap: () {
+                Navigator.push<void>(
+                  context,
+                  MaterialPageRoute<void>(
+                    builder: (BuildContext context) => const LinkableScreen(),
+                  ),
+                );
+              },
+            ),
             const Divider(
               color: Colors.red,
             ),
