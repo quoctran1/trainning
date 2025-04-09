@@ -5,6 +5,7 @@ import 'package:trainning/screen/bloc_screen/bloc_provider_screen.dart';
 import 'package:trainning/screen/bloc_screen/bloc_screen.dart';
 import 'package:trainning/screen/bloc_screen/loading_bloc_screen.dart';
 import 'package:trainning/screen/cupertino_screen.dart';
+import 'package:trainning/screen/custom_paint/custom_paint_screen.dart';
 import 'package:trainning/screen/firebase_screen/firestore_screen.dart';
 import 'package:trainning/screen/firebase_screen/remote_config_controller.dart';
 import 'package:trainning/screen/firebase_screen/remote_config_screen.dart';
@@ -615,6 +616,21 @@ class _MyHomePageState extends State<MyHomePage> {
                   context,
                   MaterialPageRoute<void>(
                     builder: (BuildContext context) => const LinkableScreen(),
+                  ),
+                );
+              },
+            ),
+            const Divider(
+              color: Colors.red,
+            ),
+            HomeButtonWidget(
+              title: 'CustomPaintScreen',
+              onTap: () {
+                Navigator.push<void>(
+                  context,
+                  MaterialPageRoute<void>(
+                    builder: (BuildContext context) =>
+                        const CustomPaintScreen(),
                   ),
                 );
               },

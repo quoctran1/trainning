@@ -57,7 +57,7 @@ class _IsolateScreenState extends State<IsolateScreen> {
                 HomeButtonWidget(
                     title: 'Heavy',
                     onTap: () {
-                      onClickSubmit(4000000000);
+                      onClickSubmit(5000000000);
                     }),
                 HomeButtonWidget(
                     title: 'Isolate',
@@ -88,8 +88,11 @@ class IsolateController {
 
   void heavyLoop(int value) {
     log('start loop');
+    int sum = 0;
     for (int i = 0; i < value; i++) {
+      sum += i;
     }
+    print(sum);
     log('end loop');
   }
 }
