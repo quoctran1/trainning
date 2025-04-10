@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:trainning/screen/custom_paint/bubble_chat_custom_paint.dart';
+import 'package:trainning/screen/custom_paint/item_background_custom_painter.dart';
 
 class CustomPaintScreen extends StatefulWidget {
   const CustomPaintScreen({super.key});
@@ -13,7 +13,8 @@ class _CustomPaintScreenState extends State<CustomPaintScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
-      body: const BubbleChatCustomPaint(),
+      // body: const BubbleChatCustomPaint(),
+      body: const ItemBackgroundCustomPaint(),
     );
   }
 }

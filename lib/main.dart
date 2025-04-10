@@ -35,6 +35,7 @@ import 'package:trainning/screen/value_notifier_screen.dart';
 import 'package:trainning/utils/flavor_configs.dart';
 import 'package:trainning/widget/home_button_widget.dart';
 
+import 'screen/custom_paint/ticket_custom_paint/ticket_custom_paint.dart';
 import 'screen/expand_screen.dart';
 import 'screen/form/form_container_screen.dart';
 import 'screen/list_view_screen/list_view_builder_screen.dart';
@@ -631,6 +632,18 @@ class _MyHomePageState extends State<MyHomePage> {
                   MaterialPageRoute<void>(
                     builder: (BuildContext context) =>
                         const CustomPaintScreen(),
+                  ),
+                );
+              },
+            ),
+            HomeButtonWidget(
+              title: 'TicketCustomPaint',
+              onTap: () {
+                Navigator.push<void>(
+                  context,
+                  MaterialPageRoute<void>(
+                    builder: (BuildContext context) =>
+                        const TicketCustomPaint(),
                   ),
                 );
               },
