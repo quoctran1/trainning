@@ -59,11 +59,6 @@ class HeaderTicketCustomPainter extends StatelessWidget {
                       height: 20,
                     ),
                   ),
-                  const Divider(
-                    thickness: 1,
-                    color: Colors.black,
-                    height: 20,
-                  ),
                 ],
               ),
               const Expanded(

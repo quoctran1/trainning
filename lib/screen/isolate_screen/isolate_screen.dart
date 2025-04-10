@@ -50,11 +50,6 @@ class _IsolateScreenState extends State<IsolateScreen> {
             Row(
               children: [
                 HomeButtonWidget(
-                    title: 'Submit',
-                    onTap: () {
-                      onClickSubmit(100000000);
-                    }),
-                HomeButtonWidget(
                     title: 'Heavy',
                     onTap: () {
                       onClickSubmit(5000000000);
@@ -62,7 +57,6 @@ class _IsolateScreenState extends State<IsolateScreen> {
                 HomeButtonWidget(
                     title: 'Isolate',
                     onTap: () {
-                      completeNotifier.value = true;
                       compute(heavyLoop, 5000000000);
                       // IsolateController().callFunction(5000000000);
                     }),
@@ -77,23 +71,6 @@ class _IsolateScreenState extends State<IsolateScreen> {
   void onClickSubmit(int value) {
     completeNotifier.value = true;
     heavyLoop(value);
-  }
-}
-
-class IsolateController {
-  Future<bool> callFunction(int value) async {
-    compute(heavyLoop, 5000000000);
-    return false;
-  }
-
-  void heavyLoop(int value) {
-    log('start loop');
-    int sum = 0;
-    for (int i = 0; i < value; i++) {
-      sum += i;
-    }
-    print(sum);
-    log('end loop');
   }
 }
 
