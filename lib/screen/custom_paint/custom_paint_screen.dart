@@ -13,7 +13,6 @@ class _CustomPaintScreenState extends State<CustomPaintScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
-      // body: const BubbleChatCustomPaint(),
       body: const ItemBackgroundCustomPaint(),
     );
   }

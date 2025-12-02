@@ -49,6 +49,14 @@ dependencies:
   cloud_firestore: ^5.1.0
   tmdb_api: ^2.2.2
   url_launcher: ^6.3.1
+  firebase_auth: ^5.5.2
+  tap_debouncer: ^2.2.0
+#  tap_debouncer:
+#    path: /Applications/Applications/flutter_debouncer
+#    git:
+#      url: https://github.com/quoctran1/flutter_debouncer.git
+#      ref: master
+#      ref: cb2eed961fda3baab65c53f98c22bca78b8f0aa6
 
 dev_dependencies:
   flutter_test:

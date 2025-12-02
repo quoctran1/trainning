@@ -8,7 +8,7 @@ class HeaderTicketCustomPainter extends StatelessWidget {
     return CustomPaint(
       painter: RPSCustomPainter(),
       child: Container(
-        height: 130,
+        height: 100,
         padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 20),
         child: IntrinsicHeight(
           child: Row(

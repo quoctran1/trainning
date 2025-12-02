@@ -97,11 +97,5 @@ class _CacheImageScreenState extends State<CacheImageScreen> {
     String getString(){
     String fe='dww';
     return fe;
-    // return 'adwdwa';
   }
-
-// flutter_image_compress
-// https://github.com/warcayac/compressors_comparison
-
-//CFol: https://github.com/Baseflow/flutter_cached_network_image/issues/802
 }

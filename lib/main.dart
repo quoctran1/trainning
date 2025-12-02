@@ -35,6 +35,7 @@ import 'package:trainning/screen/value_notifier_screen.dart';
 import 'package:trainning/utils/flavor_configs.dart';
 import 'package:trainning/widget/home_button_widget.dart';
 
+import 'screen/custom_library/custom_library.dart';
 import 'screen/custom_paint/ticket_custom_paint/ticket_custom_paint.dart';
 import 'screen/custom_paint/triangle_custom_painter/triangle_custom_painter.dart';
 import 'screen/expand_screen.dart';
@@ -657,6 +658,20 @@ class _MyHomePageState extends State<MyHomePage> {
                   MaterialPageRoute<void>(
                     builder: (BuildContext context) =>
                         const TriangleCustomPainter(),
+                  ),
+                );
+              },
+            ),
+            const Divider(
+              color: Colors.red,
+            ),
+            HomeButtonWidget(
+              title: 'CustomLibrary',
+              onTap: () {
+                Navigator.push<void>(
+                  context,
+                  MaterialPageRoute<void>(
+                    builder: (BuildContext context) => const CustomLibrary(),
                   ),
                 );
               },
