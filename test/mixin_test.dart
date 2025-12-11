@@ -5,14 +5,7 @@ void main() {
 
   group('Nullable', () {
 
-    test('Non', () {
-
-      // final result = animal.logData();
-      // print(result);
-
-      // final one = doSomeThing(() {
-      //   print('123123');
-      // });
+    test('1234', () {
     });
   });
 }
