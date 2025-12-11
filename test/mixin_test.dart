@@ -4,8 +4,9 @@ void main() {
 
 
   group('Nullable', () {
-    test('Non-null', () {
-      
+
+    test('Non', () {
+
       // final result = animal.logData();
       // print(result);
 
