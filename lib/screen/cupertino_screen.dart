@@ -27,6 +27,7 @@ class _CupertinoScreenState extends State<CupertinoScreen> {
             icon: Icon(CupertinoIcons.shopping_cart),
             label: 'Cart',
           ),
+
         ],
       ),
       tabBuilder: (context, index) {
@@ -54,7 +55,7 @@ class _CupertinoScreenState extends State<CupertinoScreen> {
               );
             });
           default:
-            return const SizedBox();
+            return const  Text('dwdawd');
         }
       },
     );

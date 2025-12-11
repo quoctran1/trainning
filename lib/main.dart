@@ -1,4 +1,7 @@
+import 'dart:async';
+
 import 'package:firebase_analytics/firebase_analytics.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:trainning/screen/animation/animation_screen.dart';
 import 'package:trainning/screen/bloc_screen/bloc_provider_screen.dart';
@@ -50,7 +53,19 @@ import 'screen/subject_screen/behaviour_subject_screen.dart';
 import 'screen/tab_screen/general_tab_screen.dart';
 
 void main() {
-  runApp(const MyApp());
+  runZonedGuarded<Future<void>>(
+        () async {
+      WidgetsFlutterBinding.ensureInitialized();
+      await Future.wait([
+        Firebase.initializeApp()
+]);
+      runApp(const MyApp());
+    },
+        (error, stack) {
+      print(error);
+    },
+  );
+
 }
 
 class MyApp extends StatelessWidget {

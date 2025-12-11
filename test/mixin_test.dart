@@ -1,8 +1,11 @@
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
+
+
   group('Nullable', () {
     test('Non-null', () {
+      getName();
       // Animal animal = Animal();
       // final result = animal.logData();
       // print(result);

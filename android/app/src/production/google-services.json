@@ -1,0 +1,49 @@
+{
+  "project_info": {
+    "project_number": "827899732204",
+    "firebase_url": "https://training-312ee-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "training-312ee",
+    "storage_bucket": "training-312ee.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:827899732204:android:14869a8bf9f84fa34085c9",
+        "android_client_info": {
+          "package_name": "com.example.trainning.development"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB7hIeGj5G8HTupHfj0qvgWPAoWh1dByB0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:827899732204:android:a10d10b0269345684085c9",
+        "android_client_info": {
+          "package_name": "com.example.trainning.production"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB7hIeGj5G8HTupHfj0qvgWPAoWh1dByB0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
