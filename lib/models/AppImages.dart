@@ -5,7 +5,4 @@ class AppImages{
 class AppConstants{
   static const double defaultPadding = 16;
   static const double maximumCacheTime = 3600;
-
-  getAppTile=> 'title'.tr();
-  getChangeLanguage=> 'change_language'.tr();
 }
